@@ -6,14 +6,12 @@ public class Multiples {
     }
 
     static int multiples(int n, int a, int b) {
-        int curr = 0;
-        for (int i = 1; i <= n; i++) {
-            boolean divisibleBya = i % a == 0;
-            boolean divisibleByb = i % b == 0;
-            if  (divisibleBya && divisibleByb) {
-                curr++;
+        int count = 0;
+        for (int i = 1; i < n; i++) {
+            if (i % a == 0 || i % b == 0) { // divisible by a OR b
+                count++;
             }
         }
-        return curr;
+        return count;
     }
 }
